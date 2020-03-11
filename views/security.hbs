@@ -1,0 +1,14 @@
+<h1>Security Settings</h1>
+
+<ul class="list-group">
+  <li class="list-group-item"><strong>Last Login:</strong> <span
+      id="lastLogin"></span></li>
+</ul>
+
+<!-- Format Date -->
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script nonce={{ nonce }}>
+  const lastLogin = '{{ last_login }}'
+  const formatLastLogin = moment(new Date(lastLogin)).format('ddd, DD-MM-YYYY HH:mm:ss');
+  document.querySelector('#lastLogin').innerHTML += formatLastLogin;
+</script>

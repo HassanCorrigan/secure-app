@@ -1,0 +1,29 @@
+<div class="input-form">
+  <h1>Login</h1>
+
+  <form action="/login" method="POST">
+    <i class="fas fa-user-shield bigger"></i>
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Enter email" value="{{email}}"
+        autocomplete="on" required />
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password"
+        autocomplete="on" required />
+    </div>
+    {{{captcha}}}
+    <button type="submit" class="btn btn-primary mt-3">Login</button>
+  </form>
+</div>
+
+<script nonce={{ nonce }}>
+  const captcha = document.querySelector('div.g-recaptcha');
+  captcha.parentElement.addEventListener("submit", (e) => {
+    if (grecaptcha.getResponse() === '') {
+      e.preventDefault();
+      alert('Please check the recaptcha.');
+    }
+  }, false);
+</script>

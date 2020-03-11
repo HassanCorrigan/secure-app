@@ -1,0 +1,45 @@
+<div class="input-form">
+  <h1>Signup</h1>
+
+  <form action="/signup" method="POST">
+    <i class="fas fa-user-plus bigger"></i>
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input type="text" name="name" class="form-control" id="inputName" placeholder="Name" value="{{name}}"
+        autocomplete="on" required />
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+        placeholder="Enter email" value="{{email}}" autocomplete="on" required />
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password"
+        value="{{password}}" autocomplete="on" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$"
+        title="Passwords must be at least 12 characters long, contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character"
+        required />
+      <small id="passwordHelp" class="form-text text-muted">Passwords must be at least 12 characters long, contain at
+        least
+        1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.</small>
+    </div>
+    <div class="form-group">
+      <label for="inputPasswordConfirmation">Confirm Password</label>
+      <input type="password" name="password_confirmation" class="form-control" id="inputPasswordConfirmation"
+        placeholder="Confirm Password" value="{{password_confirmation}}" autocomplete="on" required />
+    </div>
+    {{{captcha}}}
+    <button type="submit" class="btn btn-primary mt-3">Create Account</button>
+  </form>
+</div>
+
+<script nonce={{ nonce }}>
+  const captcha = document.querySelector('div.g-recaptcha');
+  captcha.parentElement.addEventListener("submit", (e) => {
+    if (grecaptcha.getResponse() === '') {
+      e.preventDefault();
+      alert('Please check the recaptcha.');
+    }
+  }, false);
+</script>

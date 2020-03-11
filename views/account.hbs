@@ -1,0 +1,89 @@
+<h1>Account Details</h1>
+
+<ul class="list-group mb-4">
+  <li class="list-group-item">
+    <strong>Name:</strong> {{name}}
+  </li>
+  <li class="list-group-item"><strong>Email:</strong> {{email}}</li>
+  <li class="list-group-item"><strong>Account Created:</strong> <span
+      id="created"></span></li>
+</ul>
+
+<div class="accordion mb-4" id="passwordAccordian">
+  <div class="card">
+    <div class="card-header text-center" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn" type="button" data-toggle="collapse"
+          data-target="#passwordCollapse" aria-expanded="true"
+          aria-controls="collapseOne">
+          <h6>Change Password</h6>
+        </button>
+      </h2>
+    </div>
+
+    <div id="passwordCollapse" class="collapse" aria-labelledby="headingOne"
+      data-parent="#passwordAccordian">
+      <div class="card-body">
+
+        <form action="/account/update" method="POST">
+          <div class="form-group">
+            <label for="currentPassword">Current Password</label>
+            <input type="password" name="updatePass" class="form-control"
+              id="currentPassword" placeholder="Enter Current Password"
+              autocomplete="on" required />
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <input type="password" name="newPass" class="form-control"
+              id="newPassword" placeholder="Enter Your New Password"
+              autocomplete="on"
+              pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$"
+              title="Passwords must be at least 12 characters long, contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character"
+              required />
+          </div>
+          <div class="form-group">
+            <label for="newPasswordConfirmation">Confirm New Password</label>
+            <input type="password" name="newPassConfirmation"
+              class="form-control" id="newPasswordConfirmation"
+              placeholder="Confirm Your New Password" autocomplete="on"
+              pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{12,}$"
+              title="Passwords must be at least 12 characters long, contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character"
+              required />
+          </div>
+          <button type="submit" class="btn btn-primary">Update Password</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<p>
+  <button class="btn btn-danger btn-block" type="button" data-toggle="collapse"
+    data-target="#collapseDelete" aria-expanded="false"
+    aria-controls="collapseDelete">
+    Delete Account
+  </button>
+</p>
+<div class="collapse" id="collapseDelete">
+  <div class="card card-body">
+    <form action="/account/delete" method="POST">
+      <div class="form-group">
+        <label for="deletePass">Confirm Password</label>
+        <input type="password" name="deletePass" class="form-control"
+          id="deletePass" placeholder="Confirm Your Password" autocomplete="on"
+          required />
+      </div>
+      <button type="submit" class="btn btn-danger">Confirm Delete</button>
+    </form>
+  </div>
+</div>
+
+<!-- Format Date -->
+<script src="https://momentjs.com/downloads/moment.min.js"></script>
+<script nonce={{ nonce }}>
+  const created = '{{ created }}';
+  const formatCreated = moment(new Date(created)).format('ddd, DD-MM-YYYY');
+  document.querySelector('#created').innerHTML += formatCreated;
+</script>

@@ -1,0 +1,41 @@
+{
+  "name": "secure-programming-for-web-project",
+  "version": "1.0.0",
+  "description": "Project to build a secure application for the web using modern security mechanisms",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -r dotenv/config app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "secure",
+    "app",
+    "web",
+    "project"
+  ],
+  "author": "Hassan Corrigan",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-recaptcha": "^5.0.1",
+    "express-session": "^1.16.1",
+    "express-validator": "^6.4.0",
+    "handlebars": "^4.7.3",
+    "helmet": "^3.16.0",
+    "mongoose": "^5.5.2",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  }
+}

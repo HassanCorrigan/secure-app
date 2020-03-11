@@ -1,0 +1,103 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: 50px;
+}
+
+.container {
+  margin-top: 75px;
+}
+
+footer#main-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+  border-top: 1px solid #dddddd;
+  z-index: -100;
+}
+
+footer p {
+  padding: 0 15px;
+}
+
+.input-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+.input-form h1,
+.input-form i {
+  text-align: center;
+  width: 100%;
+}
+
+.bigger {
+  font-size: 100px;
+  margin: 20px 0;
+}
+
+.edit-btn,
+.delete-btn,
+.close-btn {
+  cursor: pointer;
+}
+.edit-btn:hover,
+.delete-btn:hover {
+  color: #dddddd;
+}
+
+.close-btn {
+  font-size: 2em;
+}
+
+#createBtn {
+  color: #333333;
+  font-size: 4em;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  width: 1em;
+  cursor: pointer;
+}
+i.fas.fa-plus-circle {
+  background-color: #fff;
+  border-radius: 60%;
+}
+#createBtn:hover {
+  color: #17b960;
+}
+
+.empty-tasks {
+  margin-top: 200px;
+}
+
+/* 404 page */
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg {
+  width: 100%;
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 450px;
+  background-position: center;
+  margin-bottom: -50px;
+}
+
+@media only screen and (min-width: 990px) {
+  .task-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .task-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
