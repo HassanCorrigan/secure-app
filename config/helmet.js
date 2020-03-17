@@ -14,7 +14,7 @@ module.exports = {
         (req, res) => `'nonce-${res.locals.nonce}'`,
         'https://www.google.com',
         'https://code.jquery.com',
-        'https://cdnjs.cloudflare.com',
+        'https://cdn.jsdelivr.net',
         'https://stackpath.bootstrapcdn.com',
         'https://momentjs.com',
         'https://www.google.com'
