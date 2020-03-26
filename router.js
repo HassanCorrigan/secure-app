@@ -28,7 +28,7 @@ router.post(
   '/signup',
   validateSignup(),
   recaptcha.middleware.verify,
-  // checkRecaptcha,
+  checkRecaptcha,
   signupController.postSignup
 );
 
@@ -38,7 +38,7 @@ router.post(
   '/login',
   validateLogin(),
   recaptcha.middleware.verify,
-  // checkRecaptcha,
+  checkRecaptcha,
   authenticateUser,
   authController.postLogin
 );
