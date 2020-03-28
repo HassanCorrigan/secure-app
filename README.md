@@ -1,3 +1,5 @@
+![](https://github.com/Hasssle/secure-app/workflows/Node.js%20CI/badge.svg)
+
 # secure-app
 
 A secure web app using modern security mechanisms to prevent common web attacks.
