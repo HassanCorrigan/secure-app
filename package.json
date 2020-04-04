@@ -1,7 +1,7 @@
 {
   "name": "secure-programming-for-web-project",
   "version": "1.0.0",
-  "description": "Project to build a secure application for the web using modern security mechanisms",
+  "description": "A secure application for the web using modern security mechanisms",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
