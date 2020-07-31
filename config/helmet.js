@@ -17,21 +17,12 @@ module.exports = {
         'https://cdn.jsdelivr.net',
         'https://stackpath.bootstrapcdn.com',
         'https://momentjs.com',
-        'https://www.google.com'
+        'https://www.google.com',
       ],
-      styleSrc: [
-        "'self'",
-        'https://stackpath.bootstrapcdn.com',
-        'https://use.fontawesome.com'
-      ]
-    }
-  },
-  featurePolicy: {
-    features: {
-      geolocation: ["'none'"]
-    }
+      styleSrc: ["'self'", 'https://stackpath.bootstrapcdn.com', 'https://use.fontawesome.com'],
+    },
   },
   referrerPolicy: {
-    policy: 'no-referrer'
-  }
+    policy: 'no-referrer',
+  },
 };
