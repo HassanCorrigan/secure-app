@@ -19,7 +19,7 @@
   "author": "Hassan Corrigan",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "express": "^4.16.4",
     "express-handlebars": "^4.0.0",
